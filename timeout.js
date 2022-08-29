@@ -1,5 +1,12 @@
 /**
- * ixfx flow
+ * Resettable timeout
+ * ```js
+ * const flow = require("https://github.com/ClintH/ixfx-espruino/blob/main/flow.js");
+ * let t = flow.timeout(() => console.log('hi'), 1000);
+ * t.start();
+ * t.cancel();
+ * t.isDone();
+ * ```
  */
 function timeout(callback, timeoutMs) {
  let timer = 0;
@@ -27,19 +34,4 @@ function timeout(callback, timeoutMs) {
 
  return { start: start, cancel: cancel, isDone: isDone };
 }
-
-/** 
- * ```js
- * const flow = require(`flow.js`)
- * const d = flow.debounce(() => console.log('click'), 1000);
- * d();
- * ```
- */
-debounce = function (callback, timeoutMs) {
-  const t = timeout(callback, timeoutMs);
-  const fn = (args) => t.start(args);
-  return fn;
-};
-
-exports.debounce = debounce;
-exports.timeout = timeout;
+module = timeout;
