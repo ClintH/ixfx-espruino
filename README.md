@@ -8,7 +8,7 @@ Read more
 To use these fuctions you must `require` them. To pull directly from GitHub:
 
 ```js
-const flow = require("https://github.com/ClintH/ixfx-espruino/blob/main/flow.js");
+const clamp = require("https://github.com/ClintH/ixfx-espruino/blob/main/clamp.js");
 ```
 
 Alternatively, [follow the instructions for storing the files locally](https://www.espruino.com/Modules).
